@@ -1,6 +1,6 @@
 import 'package:app_ecommerce/blocs/authentication_bloc/authentication_bloc.dart';
+import 'package:app_ecommerce/screens/auth/views/welcome_screen.dart';
 import 'package:app_ecommerce/screens/home/views/home_screen.dart';
-import 'package:app_ecommerce/screens/home/views/welcome_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
