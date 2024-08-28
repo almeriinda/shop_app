@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../components/my_text_field.dart';
-import '../blocs/sing_in_bloc/sign_in_bloc.dart';
+import '../blocs/sign_in_bloc/sign_in_bloc.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -36,7 +36,7 @@ class _SignInScreenState extends State<SignInScreen> {
         } else if(state is SignInFailure) {
           setState(() {
             signInRequired = false;
-            _errorMsg = 'Invalid email or password';
+            _errorMsg = 'E-mail ou senha inválida';
           });
         }
       },
@@ -56,9 +56,9 @@ class _SignInScreenState extends State<SignInScreen> {
                       errorMsg: _errorMsg,
                       validator: (val) {
                         if (val!.isEmpty) {
-                          return 'Please fill in this field';
+                          return 'Por favor preencha este campo';
                         } else if (!RegExp(r'^[\w-\.]+@([\w-]+.)+[\w-]{2,4}$').hasMatch(val)) {
-                          return 'Please enter a valid email';
+                          return 'Por favor insira um e-mail válido';
                         }
                         return null;
                       }
@@ -76,9 +76,9 @@ class _SignInScreenState extends State<SignInScreen> {
                   errorMsg: _errorMsg,
                   validator: (val) {
                     if (val!.isEmpty) {
-                      return 'Please fill in this field';
+                      return 'Por favor preencha este campo';
                     } else if (!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~`)\%\-(_+=;:,.<>/?"[{\]}\|^]).{8,}$').hasMatch(val)) {
-                      return 'Please enter a valid password';
+                      return 'Por favor insira uma senha válida';
                     }
                     return null;
                   },

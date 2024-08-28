@@ -59,9 +59,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     prefixIcon: const Icon(CupertinoIcons.mail_solid),
                     validator: (val) {
                       if(val!.isEmpty) {
-                        return 'Please fill in this field';
+                        return 'Por favor preencha este campo';
                       } else if(!RegExp(r'^[\w-\.]+@([\w-]+.)+[\w-]{2,4}$').hasMatch(val)) {
-                        return 'Please enter a valid email';
+                        return 'Por favor insira um e-mail válido';
                       }
                       return null;
                     }
@@ -139,9 +139,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     validator: (val) {
                       if(val!.isEmpty) {
-                        return 'Please fill in this field';
+                        return 'Por favor preencha este campo';
                       } else if(!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~`)\%\-(_+=;:,.<>/?"[{\]}\|^]).{8,}$').hasMatch(val)) {
-                        return 'Please enter a valid password';
+                        return 'Por favor insira uma senha válida';
                       }
                       return null;
                     }
@@ -156,7 +156,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "⚈  1 uppercase",
+                        "⚈  1 maiúscula",
                         style: TextStyle(
                             color: containsUpperCase
                                 ? Colors.green
@@ -164,7 +164,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                       Text(
-                        "⚈  1 lowercase",
+                        "⚈  1 minúscula",
                         style: TextStyle(
                             color: containsLowerCase
                                 ? Colors.green
@@ -172,7 +172,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                       Text(
-                        "⚈  1 number",
+                        "⚈  1 número",
                         style: TextStyle(
                             color: containsNumber
                                 ? Colors.green
@@ -185,7 +185,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "⚈  1 special character",
+                        "⚈  1 caractere especial",
                         style: TextStyle(
                             color: containsSpecialChar
                                 ? Colors.green
@@ -193,7 +193,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                       Text(
-                        "⚈  8 minimum character",
+                        "⚈  8 caracteres mínimos",
                         style: TextStyle(
                             color: contains8Length
                                 ? Colors.green
@@ -209,15 +209,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: MyTextField(
                     controller: nameController,
-                    hintText: 'Name',
+                    hintText: 'Nome',
                     obscureText: false,
                     keyboardType: TextInputType.name,
                     prefixIcon: const Icon(CupertinoIcons.person_fill),
                     validator: (val) {
                       if(val!.isEmpty) {
-                        return 'Please fill in this field';
+                        return 'Por favor preencha este campo';
                       } else if(val.length > 30) {
-                        return 'Name too long';
+                        return 'Nome muito longo';
                       }
                       return null;
                     }
