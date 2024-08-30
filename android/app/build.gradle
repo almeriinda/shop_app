@@ -25,7 +25,7 @@ if (flutterVersionName == null) {
 
 android {
     namespace 'com.example.shop_app'
-    compileSdk = 33
+    compileSdk = 34
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -33,20 +33,18 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.example.shop_app'
-        minSdkVersion 21  // Ou a versão mínima que você deseja suportar
-        targetSdkVersion 33  // Ou a versão do SDK que você está usando
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
+        applicationId 'com.example.shopApp'
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
     }
 
     buildTypes {
         release {
-            // Ativa a diminuição de código e a remoção de recursos não utilizados
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            // Configure suas assinaturas de release aqui
             signingConfig signingConfigs.debug
         }
     }
