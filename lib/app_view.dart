@@ -25,11 +25,14 @@ class MyAppView extends StatelessWidget {
         builder: ((context, state){
           if(state.status == AuthenticationStatus.authenticated){
             return HomeScreen();
+          } else if (state.status == AuthenticationStatus.unauthenticated) {
+            return WelcomeScreen();
           } else {
             return WelcomeScreen();
           }
         }
         )
+
       ),
     );
   }
