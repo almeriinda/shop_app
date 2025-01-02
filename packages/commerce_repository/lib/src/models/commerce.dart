@@ -1,3 +1,6 @@
+import '../entities/commerce_entity.dart';
+import 'macros.dart';
+
 class Commerce {
   String commerceId;
   String picture;
@@ -7,19 +10,19 @@ class Commerce {
   String description;
   double price;
   double discount;
-  List<Macros> macros;
+  Macros macros;
 
-  Commerce(
-      this.commerceId,
-      this.picture,
-      this.isVeg,
-      this.spicy,
-      this.name,
-      this.description,
-      this.price,
-      this.discount,
-      this.macros,
-  );
+  Commerce({
+    required this.commerceId,
+    required this.picture,
+    required this.isVeg,
+    required this.spicy,
+    required this.name,
+    required this.description,
+    required this.price,
+    required this.discount,
+    required this.macros,
+  });
 
   CommerceEntity toEntity() {
     return CommerceEntity(

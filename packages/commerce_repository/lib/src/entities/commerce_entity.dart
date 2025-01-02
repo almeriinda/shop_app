@@ -1,5 +1,9 @@
 import 'dart:math';
 
+import 'package:commerce_repository/src/entities/macros_entity.dart';
+
+import '../models/macros.dart';
+
 class CommerceEntity{
   String commerceId;
   String picture;
@@ -9,7 +13,7 @@ class CommerceEntity{
   String description;
   double price;
   double discount;
-  List<Macros> macros;
+  Macros macros;
 
   CommerceEntity({
     required this.commerceId,
@@ -33,7 +37,7 @@ class CommerceEntity{
       'description': description,
       'price': price,
       'discount': discount,
-      'macros': macros.map((e) => null),
+      'macros': macros.toEntity().toDocument(),
     };
   }
 
@@ -47,7 +51,7 @@ class CommerceEntity{
       description:doc['description'] ,
       price: doc['price'] ,
       discount : doc['discount'],
-      macros: doc['macros'],
+      macros: Macros.fromEntity(MacrosEntity.fromDocument(doc['macros'])),
     );
   }
 }
